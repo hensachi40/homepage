@@ -1,0 +1,159 @@
+@charset "UFT-8";
+header {
+    padding:14px;
+    background: #ccc;
+  }
+  
+  #nav-drawer {
+    position: relative;
+  }
+  
+  /*チェックボックス等は非表示に*/
+  .nav-unshown {
+    display:none;
+  }
+  
+  /*アイコンのスペース*/
+  #nav-open {
+    display: inline-block;
+    width: 50px;
+    height: 60px;
+    vertical-align: middle;
+  }
+  
+  /*ハンバーガーの形をCSSで表現*/
+  #nav-open span, #nav-open span:before, #nav-open span:after {
+    position: absolute;
+    height: 8px;/*線の太さ*/
+    width: 60px;/*長さ*/
+    border-radius: 12px;
+    background: #555;
+    display: block;
+    content: '';
+    cursor: pointer;
+  }
+  #nav-open span:before {
+    bottom: -20px;
+  }
+  #nav-open span:after {
+    bottom: -40px;
+  }
+  
+  /*閉じる用の薄黒箇所*/
+  #nav-close {
+    display: none;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0;
+    transition: .3s ease-in-out;
+  }
+  
+  /*メニューの中身*/
+  #nav-content {
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 90%;
+    max-width: 330px;/*最大幅（お好みで調整を）*/
+    height: 100%;
+    background-image: url(https://otarunet.com/wordpress/wp-content/uploads/2015/04/DSC08446.jpg);
+    transition: .3s ease-in-out;
+    -webkit-transform: translateX(-105%);
+    transform: translateX(-105%);
+    font-size: 23px;
+  }
+  
+  /*チェックがついたら表示させる*/
+  #nav-input:checked ~ #nav-close {
+    display: block;
+    opacity: .5;
+  }
+  
+  #nav-input:checked ~ #nav-content {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+    box-shadow: 6px 0 25px rgba(0,0,0,.15);
+  }
+  
+  .header-logo-menu{
+   display: flex;
+   display: -moz-flex;
+   display: -o-flex;
+   display: -webkit-flex;
+   display: -ms-flex;
+   flex-direction: row;
+   -moz-flex-direction: row;
+   -o-flex-direction: row;
+   -webkit-flex-direction: row;
+   -ms-flex-direction: row;
+  }
+  
+  /*ロゴやサイトタイトルをセンタリング*/
+  .logo-area{text-align:center;margin:auto;}
+
+
+/*ページ上にするやつ*/
+#page_top{
+  width: 90px;
+  height: 90px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  opacity: 0.6;
+}
+#page_top a{
+  position: relative;
+  display: block;
+  width: 90px;
+  height: 90px;
+  text-decoration: none;
+}
+#page_top a::before{
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f102';
+  font-size: 25px;
+  color: #3f98ef;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: -40px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+}
+#page_top a::after{
+  content: 'PAGE TOP';
+  font-size: 13px;
+  color: #fff;
+  position: absolute;
+  top: 45px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+  color: #3f98ef;
+}
+
+main {
+    height: 130pc; /* スクロールの演出を見れるようにmainに高さを指定 */
+    background-color: #19a4a2
+}
+.font{
+    font-size: large;
+    text-align: center;
+    color:white;
+    padding: 300px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+

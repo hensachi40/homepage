@@ -1,0 +1,228 @@
+@charset "UFT-8";
+header {
+    padding:14px;
+    background: #ccc;
+  }
+  
+  #nav-drawer {
+    position: relative;
+  }
+  
+  /*チェックボックス等は非表示に*/
+  .nav-unshown {
+    display:none;
+  }
+  
+  /*アイコンのスペース*/
+  #nav-open {
+    display: inline-block;
+    width: 50px;
+    height: 60px;
+    vertical-align: middle;
+  }
+  
+  /*ハンバーガーの形をCSSで表現*/
+  #nav-open span, #nav-open span:before, #nav-open span:after {
+    position: absolute;
+    height: 8px;/*線の太さ*/
+    width: 60px;/*長さ*/
+    border-radius: 12px;
+    background: #555;
+    display: block;
+    content: '';
+    cursor: pointer;
+  }
+  #nav-open span:before {
+    bottom: -20px;
+  }
+  #nav-open span:after {
+    bottom: -40px;
+  }
+  
+  /*閉じる用の薄黒箇所*/
+  #nav-close {
+    display: none;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0;
+    transition: .3s ease-in-out;
+  }
+  
+  /*メニューの中身*/
+  #nav-content {
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 90%;
+    max-width: 330px;/*最大幅（お好みで調整を）*/
+    height: 100%;
+    background-image: url(https://otarunet.com/wordpress/wp-content/uploads/2015/04/DSC08446.jpg);
+    transition: .3s ease-in-out;
+    -webkit-transform: translateX(-105%);
+    transform: translateX(-105%);
+    font-size: 23px;
+  }
+  
+  /*チェックがついたら表示させる*/
+  #nav-input:checked ~ #nav-close {
+    display: block;
+    opacity: .5;
+  }
+  
+  #nav-input:checked ~ #nav-content {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+    box-shadow: 6px 0 25px rgba(0,0,0,.15);
+  }
+  
+  .header-logo-menu{
+   display: flex;
+   display: -moz-flex;
+   display: -o-flex;
+   display: -webkit-flex;
+   display: -ms-flex;
+   flex-direction: row;
+   -moz-flex-direction: row;
+   -o-flex-direction: row;
+   -webkit-flex-direction: row;
+   -ms-flex-direction: row;
+  }
+  
+  /*ロゴやサイトタイトルをセンタリング*/
+  .logo-area{text-align:center;margin:auto;}
+/*ここから自由に書く😊*/
+.チャンネル{
+    background:linear-gradient(to right, rgb(9, 85, 236) 0%, rgb(0, 221, 255) 100%);
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    text-shadow: 3px 3px 1px black;
+}
+img { 
+    max-width: 100%; 
+    height:auto;
+}
+.profile{
+    text-align: center;
+}
+
+/*コメント*/
+.cp_qa *, .cp_qa *:after, .cp_qa *:before {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+.cp_qa .cp_actab {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	margin: 0 0 1em 0;
+	color: #1b2538;
+}
+.cp_qa .cp_actab input {
+	position: absolute;
+	opacity: 0;
+}
+/* 質問 */
+.cp_qa .cp_actab label {
+	font-weight: bold;
+	line-height: 1.6em;
+	position: relative;
+	display: block;
+	margin: 0 0 0 0;
+	padding: 1em 2em 1em 2.5em;
+	cursor: pointer;
+	text-indent: 1em;
+	border-radius: 0.5em;
+	background: rgba(27,37,56,0.1);
+}
+.cp_qa .cp_actab label::before {
+	font-family: serif;
+	font-size: 1.5em;
+	margin-left: -2em;
+	padding-right: 0.5em;
+	content: 'Q';
+}
+.cp_qa .cp_actab label:hover {
+	transition: all 0.3s;
+	color: #00838f;
+}
+/* --質問の＋アイコン */
+.cp_qa .cp_actab label::after {
+	font-size: 1.7em;
+	font-weight: bold;
+	line-height: 2em;
+	position: absolute;
+	top: 0;
+	right: 0;
+	content: 'b';
+	display: inline-block;
+	width: 2em;
+	height: 2em;
+	-webkit-transition: transform 0.4s;
+	        transition: transform 0.4s;
+}
+/* 答え */
+.cp_qa .cp_actab .cp_actab-content {
+	position: relative;
+	overflow: hidden;
+	max-height: 0;
+	padding: 0 0 0 2.5em;
+	-webkit-transition: max-height 0.2s;
+	        transition: max-height 0.2s;
+	border-radius: 0 0 0.5em 0.5em;
+}
+.cp_qa .cp_actab .cp_actab-content::before {
+	font-family: serif;
+	font-size: 1.5em;
+	position: absolute;
+	margin: 0.4em 0 0 -1em;
+	padding: 0;
+	content: 'A';
+}
+.cp_qa .cp_actab .cp_actab-content p {
+	margin: 1em 1em 1em 0;
+}
+/* 質問を開いた時の仕様 */
+/* --答えの高さ */
+.cp_qa .cp_actab input:checked ~ .cp_actab-content {
+	max-height: 40em;
+	border: 10px solid rgba(27,37,56,0.1);
+}
+/* 質問をクリックした時のアイコンの動き */
+.cp_qa .cp_actab input:checked ~ label {
+	color: #00838f;
+	border-radius: 0.5em 0.5em 0 0;
+}
+/* 質問をクリックした時の+の動き */
+.cp_qa .cp_actab input[type=checkbox]:checked + label::after {
+	-webkit-transform: rotateZ(45deg);
+	transform: rotateZ(45deg);
+	-webkit-transform-origin: 50% 50%;
+	transform-origin: 50% 50%;
+}
+.btn {
+  display: block;
+  border-radius: 4px;
+  text-decoration: none;
+  padding: 6px 12px;
+  font-size: 30px;
+  width: 240px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+* ボタン色を設定 */
+.btn-twitter { background-color: #1688DF; }
+footer{
+  background-color: rgba(85, 85, 85, 0.143);
+  text-align: left;
+  color:black;
+  padding: 30px;
+  margin: 30px;
+}
